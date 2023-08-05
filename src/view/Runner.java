@@ -92,187 +92,186 @@ public class Runner {
                 }
 
                 // enter cuantify and show the parameteres of the sale
-                System.out.println("Enter the quantity you wish to buy:");
-                switch (option) {
+                if (option != 6) {
+                    System.out.println("Enter the quantity you wish to buy:");
+                    switch (option) {
 
-                    case 1:
-                        stock = soap.getStock();
-                        cant = sc.nextInt();
-                        if (cant <= stock) {
-                            sales = presenter.addSale(soap.getName(), soap.getValue(), soap.getStock(),
-                                    soap.isIva(),
-                                    soap.getETypeProduct(), cant);
+                        case 1:
+                            stock = soap.getStock();
+                            cant = sc.nextInt();
+                            if (cant <= stock) {
+                                sales = presenter.addSale(soap.getName(), soap.getValue(), soap.getStock(),
+                                        soap.isIva(), soap.getETypeProduct(), cant);
 
-                            System.out.println("Details of the sale: " + presenter.showSale());
+                                System.out.println("Details of the sale: " + presenter.showSale());
 
-                            System.out
-                                    .println("If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
-                            optionTwo = sc.nextInt();
-                            switch (optionTwo) {
-                                case 1:
+                                System.out.println(
+                                        "If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
+                                optionTwo = sc.nextInt();
+                                switch (optionTwo) {
+                                    case 1:
 
-                                    cont = cont + sales;
-                                    acum = acum + 1;
-                                    newStock = stock - cant;
-                                    System.out.println("Confrimed sale");
-                                    break;
-                                case 2:
-                                    System.out.println("Sale canceled");
-                                default:
-                                    System.out.println("Invalid option");
-                                    break;
+                                        cont = cont + sales;
+                                        acum = acum + 1;
+                                        newStock = stock - cant;
+                                        System.out.println("Confrimed sale");
+                                        break;
+                                    case 2:
+                                        System.out.println("Sale canceled");
+                                    default:
+                                        System.out.println("Invalid option");
+                                        break;
+                                }
+                            } else {
+                                System.out.println("Not enough stock. Available: " + stock);
                             }
-                        } else {
-                            System.out.println("Not enough stock. Available: " + stock);
-                        }
-                        break;
-
-                    case 2:
-                        cant = sc.nextInt();
-                        stock = rice.getStock();
-                        if (cant <= stock) {
-                            sales = presenter.addSale(rice.getName(), rice.getValue(), rice.getStock(),
-                                    rice.isIva(),
-                                    rice.getETypeProduct(), cant);
-                            System.out.println("Details of the sale: " + presenter.showSale());
-                            System.out
-                                    .println("If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
-                            optionTwo = sc.nextInt();
-                            switch (optionTwo) {
-                                case 1:
-
-                                    cont = cont + sales;
-                                    acum = acum + 1;
-                                    newStock = stock - cant;
-                                    break;
-                                case 2:
-                                    System.out.println("Sale canceled");
-                                default:
-                                    System.out.println("Invalid option");
-                                    break;
-                            }
-                        } else {
-                            System.out.println("Not enough stock. Available:  + stock");
-                            break;
-                        }
-                    case 3:
-                        cant = sc.nextInt();
-                        stock = medicine.getStock();
-                        if (cant <= stock) {
-                            sales = presenter.addSale(medicine.getName(), medicine.getValue(), medicine.getStock(),
-                                    medicine.isIva(),
-                                    medicine.getETypeProduct(), cant);
-                            System.out.println("Details of the sale: " + presenter.showSale());
-                            System.out
-                                    .println("If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
-                            optionTwo = sc.nextInt();
-                            switch (optionTwo) {
-                                case 1:
-
-                                    cont = cont + sales;
-                                    acum = acum + 1;
-                                    newStock = stock - cant;
-                                    break;
-                                case 2:
-                                    System.out.println("Sale canceled");
-                                default:
-                                    System.out.println("Invalid option");
-                                    break;
-                            }
-                        } else {
-                            System.out.println("Not enough stock. Available: " + stock);
-                            break;
-                        }
-
-                    case 4:
-                        cant = sc.nextInt();
-                        stock = whisky.getStock();
-                        if (cant <= stock) {
-                            sales = presenter.addSale(whisky.getName(), whisky.getValue(), whisky.getStock(),
-                                    whisky.isIva(),
-                                    whisky.getETypeProduct(), cant);
-                            System.out.println("Details of the sale: " + presenter.showSale());
-                            System.out
-                                    .println("If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
-                            optionTwo = sc.nextInt();
-                            switch (optionTwo) {
-                                case 1:
-
-                                    cont = cont + sales;
-                                    acum = acum + 1;
-                                    newStock = stock - cant;
-                                    break;
-                                case 2:
-                                    System.out.println("Sale canceled");
-                                default:
-                                    System.out.println("Invalid option");
-                                    break;
-                            }
-                        } else {
-                            System.out.println("Not enough stock. Available: " + stock);
                             break;
 
-                        }
-                    case 5:
-                        cant = sc.nextInt();
-                        stock = pancake.getStock();
-                        if (cant <= stock) {
-                            sales = presenter.addSale(pancake.getName(), pancake.getValue(), pancake.getStock(),
-                                    pancake.isIva(),
-                                    pancake.getETypeProduct(), cant);
+                        case 2:
+                            cant = sc.nextInt();
+                            stock = rice.getStock();
+                            if (cant <= stock) {
+                                sales = presenter.addSale(rice.getName(), rice.getValue(), rice.getStock(),
+                                        rice.isIva(), rice.getETypeProduct(), cant);
+                                System.out.println("Details of the sale: " + presenter.showSale());
+                                System.out.println(
+                                        "If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
+                                optionTwo = sc.nextInt();
+                                switch (optionTwo) {
+                                    case 1:
 
-                            System.out.println("Details of the sale: " + presenter.showSale());
-
-                            System.out
-                                    .println("If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
-                            optionTwo = sc.nextInt();
-                            switch (optionTwo) {
-                                case 1:
-
-                                    cont = cont + sales;
-                                    acum = acum + 1;
-                                    newStock = stock - cant;
-                                    break;
-                                case 2:
-                                    System.out.println("Sale canceled");
-                                default:
-                                    System.out.println("Invalid option");
-                                    break;
+                                        cont = cont + sales;
+                                        acum = acum + 1;
+                                        newStock = stock - cant;
+                                        break;
+                                    case 2:
+                                        System.out.println("Sale canceled");
+                                    default:
+                                        System.out.println("Invalid option");
+                                        break;
+                                }
+                            } else {
+                                System.out.println("Not enough stock. Available:  + stock");
+                                break;
                             }
-                        } else {
-                            System.out.println("Not enough stock. Available: " + stock);
+                        case 3:
+                            cant = sc.nextInt();
+                            stock = medicine.getStock();
+                            if (cant <= stock) {
+                                sales = presenter.addSale(medicine.getName(), medicine.getValue(), medicine.getStock(),
+                                        medicine.isIva(), medicine.getETypeProduct(), cant);
+                                System.out.println("Details of the sale: " + presenter.showSale());
+                                System.out.println(
+                                        "If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
+                                optionTwo = sc.nextInt();
+                                switch (optionTwo) {
+                                    case 1:
+
+                                        cont = cont + sales;
+                                        acum = acum + 1;
+                                        newStock = stock - cant;
+                                        break;
+                                    case 2:
+                                        System.out.println("Sale canceled");
+                                    default:
+                                        System.out.println("Invalid option");
+                                        break;
+                                }
+                            } else {
+                                System.out.println("Not enough stock. Available: " + stock);
+                                break;
+                            }
+
+                        case 4:
+                            cant = sc.nextInt();
+                            stock = whisky.getStock();
+                            if (cant <= stock) {
+                                sales = presenter.addSale(whisky.getName(), whisky.getValue(), whisky.getStock(),
+                                        whisky.isIva(), whisky.getETypeProduct(), cant);
+                                System.out.println("Details of the sale: " + presenter.showSale());
+                                System.out.println(
+                                        "If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
+                                optionTwo = sc.nextInt();
+                                switch (optionTwo) {
+                                    case 1:
+
+                                        cont = cont + sales;
+                                        acum = acum + 1;
+                                        newStock = stock - cant;
+                                        break;
+                                    case 2:
+                                        System.out.println("Sale canceled");
+                                    default:
+                                        System.out.println("Invalid option");
+                                        break;
+                                }
+                            } else {
+                                System.out.println("Not enough stock. Available: " + stock);
+                                break;
+
+                            }
+                        case 5:
+                            cant = sc.nextInt();
+                            stock = pancake.getStock();
+                            if (cant <= stock) {
+                                sales = presenter.addSale(pancake.getName(), pancake.getValue(), pancake.getStock(),
+                                        pancake.isIva(), pancake.getETypeProduct(), cant);
+
+                                System.out.println("Details of the sale: " + presenter.showSale());
+
+                                System.out.println(
+                                        "If you want to confirm the sale enter 1, or enter 2 to cancel the sale");
+                                optionTwo = sc.nextInt();
+                                switch (optionTwo) {
+                                    case 1:
+
+                                        cont = cont + sales;
+                                        acum = acum + 1;
+                                        newStock = stock - cant;
+                                        break;
+                                    case 2:
+                                        System.out.println("Sale canceled");
+                                    default:
+                                        System.out.println("Invalid option");
+                                        break;
+                                }
+                            } else {
+                                System.out.println("Not enough stock. Available: " + stock);
+                                break;
+                            }
+                        case 6:
+                            repeat = false;
+                            System.out.println("Finish sale");
+                            System.out.println("Total amount of the sales made: " + cont);
+                            System.out.println("Average sales made: " + (acum != 0 ? cont / acum : 0));
                             break;
-                        }
-                    case 6:
-                        repeat = false;
-                        System.out.println("Finish sale");
-                        System.out.println("Total amount of the sales made: " + cont);
-                        System.out.println("Average sales made: " + (acum != 0 ? cont / acum : 0));
-                        break;
-                    default:
-                        System.out.println("Invalid option, please try again.");
-                        repeat = true;
+                        default:
+                            System.out.println("Invalid option, please try again.");
+                            repeat = true;
+
+                    }
+
+                    System.out.println("If you want do another sale enter 1 or 2 for finish the sale");
+
+                    optionThree = sc.nextInt();
+                    switch (optionThree) {
+                        case 1:
+
+                            repeat = true;
+
+                        case 2:
+
+                            System.out.println("Finish sale");
+                            System.out.println("Total amount of the sales made: " + cont);
+                            System.out.println("Average sales made: " + (cont / acum));
+                            repeat = false;
+                            break;
+                    }
 
                 }
-                repeat = false;
-                System.out.println("If you want do another sale enter 1 or 2 for finish the sale");
+            } catch (
 
-                optionThree = sc.nextInt();
-                switch (optionThree) {
-                    case 1:
-
-                        repeat = true;
-
-                    case 2:
-                        repeat = false;
-                        System.out.println("Finish sale");
-                        System.out.println("Total amount of the sales made: " + cont);
-                        System.out.println("Average sales made: " + (cont / acum));
-                        repeat = false;
-                        break;
-                }
-
-            } catch (Exception e) {
+            Exception e) {
                 System.out.println("Error: " + e.getMessage());
                 sc.nextLine();
                 repeat = true;
