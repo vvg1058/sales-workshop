@@ -29,34 +29,39 @@ public class Runner {
 
         int acum = 0;
         int optionThree;
-        int option;
+        int option = 06;
         int stock = 0;
         int optionTwo;
         int cant = 0;
         double sales = 0;
         double cont = 0;
         int newStock = 0;
-        boolean repeat = false;
+        boolean repeat = true;
 
         Presenter presenter = new Presenter();
-        System.out.println("What product do you want buy?, enter the number option\n");
-        System.out.println("1.King soap");
-        System.out.println("2.Rice x lb");
-        System.out.println("3.Paracetamol x6");
-        System.out.println("4.Old par");
-        System.out.println("5.Pancake");
-        System.out.println("6.Finish shopping");
-        option = sc.nextInt();
         do {
+
+            System.out.println("What product do you want buy?, enter the number option\n");
+            System.out.println("1.King soap");
+            System.out.println("2.Rice x lb");
+            System.out.println("3.Paracetamol x6");
+            System.out.println("4.Old par");
+            System.out.println("5.Pancake");
+            System.out.println("6.Finish shopping");
+            option = sc.nextInt();
+
             while (option != 0) {
                 Product select = new Product();
+                repeat = true;
                 switch (option) {
 
                     case 1:
+
                         select = soap;
 
                         break;
                     case 2:
+
                         select = rice;
                         break;
                     case 3:
@@ -64,8 +69,10 @@ public class Runner {
                         break;
                     case 4:
                         select = whisky;
+
                         break;
                     case 5:
+
                         select = pancake;
 
                         break;
@@ -73,11 +80,12 @@ public class Runner {
                         repeat = false;
                         System.out.println("Finish sale");
                         System.out.println("Total amount of the sales made: " + cont);
-                        System.out.println("Average sales made: " + (cont / acum));
-
                         break;
-                    default:
 
+                    default:
+                        System.out.println("Invalid option, please try again.");
+                        repeat = true;
+                        break;
                 }
 
                 // enter cuantify and show the parameteres of the sale
@@ -130,33 +138,41 @@ public class Runner {
                             break;
                         default:
                             repeat = false;
-                    }// confirm addSale
 
-                    System.out.println(
-                            "If you want confirm the sale enter 1 or 2 for cancel the sale");
+                            // confirm addSale
+                    }
+
+                    System.out.println("If you want confirm the sale enter 1 or 2 for cancel the sale");
+                    repeat = true;
                     optionTwo = sc.nextInt();
                     while (option != 2) {
                         switch (optionTwo) {
                             case 1:
+                                repeat = false;
                                 cont = cont + sales;
                                 acum = acum + 1;
                                 newStock = stock - cant;
                                 break;
                             case 2:
-
+                                repeat = false;
                                 System.out.println("Sale canceled");
                                 break;
+
                             default:
                                 System.out.println("Finish sale");
                                 System.out.println("Total amount of the sales made: " + cont);
                                 System.out.println("Average sales made: " + (cont / acum));
 
                         }
+
                         System.out.println("If you want do another sale enter 1 or 2 for finish the sale");
                         while (option != 2) {
+                            repeat = true;
                             optionThree = sc.nextInt();
                             switch (optionThree) {
                                 case 1:
+
+                                    repeat = true;
 
                                 case 2:
                                     repeat = false;
@@ -165,12 +181,12 @@ public class Runner {
                                     System.out.println("Average sales made: " + (cont / acum));
                                     break;
                             }
-
                         }
-
                     }
                 }
             }
-        } while (repeat);
+
+        } while (repeat = true);
+
     }
 }
