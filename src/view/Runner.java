@@ -44,6 +44,7 @@ public class Runner {
             repeat = false;
             try {
                 System.out.println("What product do you want buy?, enter the number option\n");
+
                 System.out.println("1.King soap");
                 System.out.println("2.Rice x lb");
                 System.out.println("3.Paracetamol x6");
@@ -114,7 +115,7 @@ public class Runner {
                                         cont = cont + sales;
                                         acum = acum + 1;
                                         newStock = stock - cant;
-                                        System.out.println("Confrimed sale");
+                                        System.out.println("Confirmed sale");
                                         break;
                                     case 2:
                                         System.out.println("Sale canceled");
@@ -139,7 +140,7 @@ public class Runner {
                                 optionTwo = sc.nextInt();
                                 switch (optionTwo) {
                                     case 1:
-
+                                        System.out.println("Confirmed sale");
                                         cont = cont + sales;
                                         acum = acum + 1;
                                         newStock = stock - cant;
@@ -154,6 +155,7 @@ public class Runner {
                                 System.out.println("Not enough stock. Available:  + stock");
                                 break;
                             }
+                            break;
                         case 3:
                             cant = sc.nextInt();
                             stock = medicine.getStock();
@@ -166,7 +168,7 @@ public class Runner {
                                 optionTwo = sc.nextInt();
                                 switch (optionTwo) {
                                     case 1:
-
+                                        System.out.println("Confirmed sale");
                                         cont = cont + sales;
                                         acum = acum + 1;
                                         newStock = stock - cant;
@@ -181,6 +183,7 @@ public class Runner {
                                 System.out.println("Not enough stock. Available: " + stock);
                                 break;
                             }
+                            break;
 
                         case 4:
                             cant = sc.nextInt();
@@ -194,7 +197,7 @@ public class Runner {
                                 optionTwo = sc.nextInt();
                                 switch (optionTwo) {
                                     case 1:
-
+                                        System.out.println("Confirmed sale");
                                         cont = cont + sales;
                                         acum = acum + 1;
                                         newStock = stock - cant;
@@ -208,8 +211,8 @@ public class Runner {
                             } else {
                                 System.out.println("Not enough stock. Available: " + stock);
                                 break;
-
                             }
+                            break;
                         case 5:
                             cant = sc.nextInt();
                             stock = pancake.getStock();
@@ -224,7 +227,7 @@ public class Runner {
                                 optionTwo = sc.nextInt();
                                 switch (optionTwo) {
                                     case 1:
-
+                                        System.out.println("Confirmed sale");
                                         cont = cont + sales;
                                         acum = acum + 1;
                                         newStock = stock - cant;
@@ -239,6 +242,7 @@ public class Runner {
                                 System.out.println("Not enough stock. Available: " + stock);
                                 break;
                             }
+                            break;
                         case 6:
                             repeat = false;
                             System.out.println("Finish sale");
@@ -248,7 +252,7 @@ public class Runner {
                         default:
                             System.out.println("Invalid option, please try again.");
                             repeat = true;
-
+                            break;
                     }
 
                     System.out.println("If you want do another sale enter 1 or 2 for finish the sale");
@@ -258,6 +262,7 @@ public class Runner {
                         case 1:
 
                             repeat = true;
+                            break;
 
                         case 2:
 
@@ -269,9 +274,7 @@ public class Runner {
                     }
 
                 }
-            } catch (
-
-            Exception e) {
+            } catch (Exception e) {
                 System.out.println("Error: " + e.getMessage());
                 sc.nextLine();
                 repeat = true;
